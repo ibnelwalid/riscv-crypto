@@ -20,21 +20,21 @@ void test_aes_128(int num_tests) {
 
     for(int i = 0; i < num_tests; i ++) {
 
-        start_instrs        = test_rdinstret();
+        //start_instrs        = test_rdinstret();
         aes_128_enc_key_schedule(erk, key    );
-        uint64_t kse_icount = test_rdinstret() - start_instrs;
+        //uint64_t kse_icount = test_rdinstret() - start_instrs;
 
-        start_instrs        = test_rdinstret();
+        //start_instrs        = test_rdinstret();
         aes_128_ecb_encrypt     (ct , pt, erk);
-        uint64_t enc_icount = test_rdinstret() - start_instrs;
+        //uint64_t enc_icount = test_rdinstret() - start_instrs;
         
-        start_instrs        = test_rdinstret();
+        //start_instrs        = test_rdinstret();
         aes_128_dec_key_schedule(drk, key    );
-        uint64_t ksd_icount   = test_rdinstret() - start_instrs;
+        //uint64_t ksd_icount   = test_rdinstret() - start_instrs;
 
-        start_instrs        = test_rdinstret();
+        //start_instrs        = test_rdinstret();
         aes_128_ecb_decrypt     (pt2, ct, drk);
-        uint64_t dec_icount = test_rdinstret() - start_instrs;
+        //uint64_t dec_icount = test_rdinstret() - start_instrs;
         
         printf("#\n# AES 128 test %d/%d\n",i , num_tests);
 
@@ -45,10 +45,10 @@ void test_aes_128(int num_tests) {
         printf("pt2=");puthex_py(pt2, AES_BLOCK_BYTES  ); printf("\n");
         printf("ct =");puthex_py(ct , AES_BLOCK_BYTES  ); printf("\n");
 
-        printf("kse_icount = 0x"); puthex64(kse_icount); printf("\n");
-        printf("ksd_icount = 0x"); puthex64(ksd_icount); printf("\n");
-        printf("enc_icount = 0x"); puthex64(enc_icount); printf("\n");
-        printf("dec_icount = 0x"); puthex64(dec_icount); printf("\n");
+        //printf("kse_icount = 0x"); puthex64(kse_icount); printf("\n");
+        //printf("ksd_icount = 0x"); puthex64(ksd_icount); printf("\n");
+        //printf("enc_icount = 0x"); puthex64(enc_icount); printf("\n");
+        //printf("dec_icount = 0x"); puthex64(dec_icount); printf("\n");
 
         printf("testnum         = %d\n",i);
 
@@ -72,10 +72,10 @@ void test_aes_128(int num_tests) {
         printf("    sys.exit(1)\n");
         printf("else:\n");
         printf("    sys.stdout.write(\""STR(TEST_NAME)" AES 128 Test passed. \")\n");
-        printf("    sys.stdout.write(\"enc: %%d, \" %% (enc_icount))\n");
-        printf("    sys.stdout.write(\"dec: %%d, \" %% (dec_icount))\n");
-        printf("    sys.stdout.write(\"kse: %%d, \" %% (kse_icount))\n");
-        printf("    sys.stdout.write(\"ksd: %%d, \" %% (ksd_icount))\n");
+        //printf("    sys.stdout.write(\"enc: %%d, \" %% (enc_icount))\n");
+        //printf("    sys.stdout.write(\"dec: %%d, \" %% (dec_icount))\n");
+        //printf("    sys.stdout.write(\"kse: %%d, \" %% (kse_icount))\n");
+        //printf("    sys.stdout.write(\"ksd: %%d, \" %% (ksd_icount))\n");
         printf("    print(\"\")\n");
         
         // New random inputs

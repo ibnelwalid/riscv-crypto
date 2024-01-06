@@ -134,7 +134,7 @@ static inline int32_t _rv32_slo    (int32_t rs1, int32_t rs2) { int32_t rd; if (
 static inline int32_t _rv32_sro    (int32_t rs1, int32_t rs2) { int32_t rd; if (__builtin_constant_p(rs2)) __asm__ ("sroi    %0, %1, %2" : "=r"(rd) : "r"(rs1), "i"(31 &  rs2)); else __asm__ ("sro     %0, %1, %2" : "=r"(rd) : "r"(rs1), "r"(rs2)); return rd; }
 static inline int32_t _rv32_rol    (int32_t rs1, int32_t rs2) { int32_t rd; if (__builtin_constant_p(rs2)) __asm__ ("rori    %0, %1, %2" : "=r"(rd) : "r"(rs1), "i"(31 & -rs2)); else __asm__ ("rol     %0, %1, %2" : "=r"(rd) : "r"(rs1), "r"(rs2)); return rd; }
 static inline int32_t _rv32_ror    (int32_t rs1, int32_t rs2) { int32_t rd; if (__builtin_constant_p(rs2)) __asm__ ("rori    %0, %1, %2" : "=r"(rd) : "r"(rs1), "i"(31 &  rs2)); else __asm__ ("ror     %0, %1, %2" : "=r"(rd) : "r"(rs1), "r"(rs2)); return rd; }
-static inline int32_t _rv32_grev   (int32_t rs1, int32_t rs2) { int32_t rd; if (__builtin_constant_p(rs2)) __asm__ ("grevi   %0, %1, %2" : "=r"(rd) : "r"(rs1), "i"(31 &  rs2)); else __asm__ ("grev    %0, %1, %2" : "=r"(rd) : "r"(rs1), "r"(rs2)); return rd; }
+//static inline int32_t _rv32_grev   (int32_t rs1, int32_t rs2) { int32_t rd; if (__builtin_constant_p(rs2)) __asm__ ("grevi   %0, %1, %2" : "=r"(rd) : "r"(rs1), "i"(31 &  rs2)); else __asm__ ("grev    %0, %1, %2" : "=r"(rd) : "r"(rs1), "r"(rs2)); return rd; }
 static inline int32_t _rv32_gorc   (int32_t rs1, int32_t rs2) { int32_t rd; if (__builtin_constant_p(rs2)) __asm__ ("gorci   %0, %1, %2" : "=r"(rd) : "r"(rs1), "i"(31 &  rs2)); else __asm__ ("gorc    %0, %1, %2" : "=r"(rd) : "r"(rs1), "r"(rs2)); return rd; }
 static inline int32_t _rv32_shfl   (int32_t rs1, int32_t rs2) { int32_t rd; if (__builtin_constant_p(rs2)) __asm__ ("shfli   %0, %1, %2" : "=r"(rd) : "r"(rs1), "i"(15 &  rs2)); else __asm__ ("shfl    %0, %1, %2" : "=r"(rd) : "r"(rs1), "r"(rs2)); return rd; }
 static inline int32_t _rv32_unshfl (int32_t rs1, int32_t rs2) { int32_t rd; if (__builtin_constant_p(rs2)) __asm__ ("unshfli %0, %1, %2" : "=r"(rd) : "r"(rs1), "i"(15 &  rs2)); else __asm__ ("unshfl  %0, %1, %2" : "=r"(rd) : "r"(rs1), "r"(rs2)); return rd; }
@@ -148,7 +148,7 @@ static inline int32_t _rv32_slo    (int32_t rs1, int32_t rs2) { int32_t rd; if (
 static inline int32_t _rv32_sro    (int32_t rs1, int32_t rs2) { int32_t rd; if (__builtin_constant_p(rs2)) __asm__ ("sroiw   %0, %1, %2" : "=r"(rd) : "r"(rs1), "i"(31 &  rs2)); else __asm__ ("srow    %0, %1, %2" : "=r"(rd) : "r"(rs1), "r"(rs2)); return rd; }
 static inline int32_t _rv32_rol    (int32_t rs1, int32_t rs2) { int32_t rd; if (__builtin_constant_p(rs2)) __asm__ ("roriw   %0, %1, %2" : "=r"(rd) : "r"(rs1), "i"(31 & -rs2)); else __asm__ ("rolw    %0, %1, %2" : "=r"(rd) : "r"(rs1), "r"(rs2)); return rd; }
 static inline int32_t _rv32_ror    (int32_t rs1, int32_t rs2) { int32_t rd; if (__builtin_constant_p(rs2)) __asm__ ("roriw   %0, %1, %2" : "=r"(rd) : "r"(rs1), "i"(31 &  rs2)); else __asm__ ("rorw    %0, %1, %2" : "=r"(rd) : "r"(rs1), "r"(rs2)); return rd; }
-static inline int32_t _rv32_grev   (int32_t rs1, int32_t rs2) { int32_t rd; if (__builtin_constant_p(rs2)) __asm__ ("greviw  %0, %1, %2" : "=r"(rd) : "r"(rs1), "i"(31 &  rs2)); else __asm__ ("grevw   %0, %1, %2" : "=r"(rd) : "r"(rs1), "r"(rs2)); return rd; }
+//static inline int32_t _rv32_grev   (int32_t rs1, int32_t rs2) { int32_t rd; if (__builtin_constant_p(rs2)) __asm__ ("greviw  %0, %1, %2" : "=r"(rd) : "r"(rs1), "i"(31 &  rs2)); else __asm__ ("grevw   %0, %1, %2" : "=r"(rd) : "r"(rs1), "r"(rs2)); return rd; }
 static inline int32_t _rv32_gorc   (int32_t rs1, int32_t rs2) { int32_t rd; if (__builtin_constant_p(rs2)) __asm__ ("gorciw  %0, %1, %2" : "=r"(rd) : "r"(rs1), "i"(31 &  rs2)); else __asm__ ("gorcw   %0, %1, %2" : "=r"(rd) : "r"(rs1), "r"(rs2)); return rd; }
 static inline int32_t _rv32_shfl   (int32_t rs1, int32_t rs2) { int32_t rd; if (__builtin_constant_p(rs2)) __asm__ ("shfli   %0, %1, %2" : "=r"(rd) : "r"(rs1), "i"(15 &  rs2)); else __asm__ ("shflw   %0, %1, %2" : "=r"(rd) : "r"(rs1), "r"(rs2)); return rd; }
 static inline int32_t _rv32_unshfl (int32_t rs1, int32_t rs2) { int32_t rd; if (__builtin_constant_p(rs2)) __asm__ ("unshfli %0, %1, %2" : "=r"(rd) : "r"(rs1), "i"(15 &  rs2)); else __asm__ ("unshflw %0, %1, %2" : "=r"(rd) : "r"(rs1), "r"(rs2)); return rd; }
@@ -160,7 +160,7 @@ static inline int64_t _rv64_slo    (int64_t rs1, int64_t rs2) { int64_t rd; if (
 static inline int64_t _rv64_sro    (int64_t rs1, int64_t rs2) { int64_t rd; if (__builtin_constant_p(rs2)) __asm__ ("sroi    %0, %1, %2" : "=r"(rd) : "r"(rs1), "i"(63 &  rs2)); else __asm__ ("sro     %0, %1, %2" : "=r"(rd) : "r"(rs1), "r"(rs2)); return rd; }
 static inline int64_t _rv64_rol    (int64_t rs1, int64_t rs2) { int64_t rd; if (__builtin_constant_p(rs2)) __asm__ ("rori    %0, %1, %2" : "=r"(rd) : "r"(rs1), "i"(63 & -rs2)); else __asm__ ("rol     %0, %1, %2" : "=r"(rd) : "r"(rs1), "r"(rs2)); return rd; }
 static inline int64_t _rv64_ror    (int64_t rs1, int64_t rs2) { int64_t rd; if (__builtin_constant_p(rs2)) __asm__ ("rori    %0, %1, %2" : "=r"(rd) : "r"(rs1), "i"(63 &  rs2)); else __asm__ ("ror     %0, %1, %2" : "=r"(rd) : "r"(rs1), "r"(rs2)); return rd; }
-static inline int64_t _rv64_grev   (int64_t rs1, int64_t rs2) { int64_t rd; if (__builtin_constant_p(rs2)) __asm__ ("grevi   %0, %1, %2" : "=r"(rd) : "r"(rs1), "i"(63 &  rs2)); else __asm__ ("grev    %0, %1, %2" : "=r"(rd) : "r"(rs1), "r"(rs2)); return rd; }
+//static inline int64_t _rv64_grev   (int64_t rs1, int64_t rs2) { int64_t rd; if (__builtin_constant_p(rs2)) __asm__ ("grevi   %0, %1, %2" : "=r"(rd) : "r"(rs1), "i"(63 &  rs2)); else __asm__ ("grev    %0, %1, %2" : "=r"(rd) : "r"(rs1), "r"(rs2)); return rd; }
 static inline int64_t _rv64_gorc   (int64_t rs1, int64_t rs2) { int64_t rd; if (__builtin_constant_p(rs2)) __asm__ ("gorci   %0, %1, %2" : "=r"(rd) : "r"(rs1), "i"(63 &  rs2)); else __asm__ ("gorc    %0, %1, %2" : "=r"(rd) : "r"(rs1), "r"(rs2)); return rd; }
 static inline int64_t _rv64_shfl   (int64_t rs1, int64_t rs2) { int64_t rd; if (__builtin_constant_p(rs2)) __asm__ ("shfli   %0, %1, %2" : "=r"(rd) : "r"(rs1), "i"(31 &  rs2)); else __asm__ ("shfl    %0, %1, %2" : "=r"(rd) : "r"(rs1), "r"(rs2)); return rd; }
 static inline int64_t _rv64_unshfl (int64_t rs1, int64_t rs2) { int64_t rd; if (__builtin_constant_p(rs2)) __asm__ ("unshfli %0, %1, %2" : "=r"(rd) : "r"(rs1), "i"(31 &  rs2)); else __asm__ ("unshfl  %0, %1, %2" : "=r"(rd) : "r"(rs1), "r"(rs2)); return rd; }
@@ -422,7 +422,7 @@ static inline int32_t _rv32_bfp(int32_t rs1, int32_t rs2)
 	return (data & mask) | (rs1 & ~mask);
 }
 
-static inline int32_t _rv32_grev(int32_t rs1, int32_t rs2)
+/*static inline int32_t _rv32_grev(int32_t rs1, int32_t rs2)
 {
 	uint32_t x = rs1;
 	int shamt = rs2 & 31;
@@ -432,7 +432,7 @@ static inline int32_t _rv32_grev(int32_t rs1, int32_t rs2)
 	if (shamt &  8) x = ((x & 0x00FF00FF) <<  8) | ((x & 0xFF00FF00) >>  8);
 	if (shamt & 16) x = ((x & 0x0000FFFF) << 16) | ((x & 0xFFFF0000) >> 16);
 	return x;
-}
+}*/
 
 static inline int32_t _rv32_gorc(int32_t rs1, int32_t rs2)
 {
@@ -500,7 +500,7 @@ static inline int64_t _rv64_bfp(int64_t rs1, int64_t rs2)
 	return (data & mask) | (rs1 & ~mask);
 }
 
-static inline int64_t _rv64_grev(int64_t rs1, int64_t rs2)
+/*static inline int64_t _rv64_grev(int64_t rs1, int64_t rs2)
 {
 	uint64_t x = rs1;
 	int shamt = rs2 & 63;
@@ -511,7 +511,7 @@ static inline int64_t _rv64_grev(int64_t rs1, int64_t rs2)
 	if (shamt & 16) x = ((x & 0x0000FFFF0000FFFFLL) << 16) | ((x & 0xFFFF0000FFFF0000LL) >> 16);
 	if (shamt & 32) x = ((x & 0x00000000FFFFFFFFLL) << 32) | ((x & 0xFFFFFFFF00000000LL) >> 32);
 	return x;
-}
+}*/
 
 static inline int64_t _rv64_gorc(int64_t rs1, int64_t rs2)
 {
@@ -864,7 +864,7 @@ static inline long _rv_slo      (long rs1, long rs2) { return _rv32_slo      (rs
 static inline long _rv_sro      (long rs1, long rs2) { return _rv32_sro      (rs1, rs2); }
 static inline long _rv_rol      (long rs1, long rs2) { return _rv32_rol      (rs1, rs2); }
 static inline long _rv_ror      (long rs1, long rs2) { return _rv32_ror      (rs1, rs2); }
-static inline long _rv_grev     (long rs1, long rs2) { return _rv32_grev     (rs1, rs2); }
+//static inline long _rv_grev     (long rs1, long rs2) { return _rv32_grev     (rs1, rs2); }
 static inline long _rv_gorc     (long rs1, long rs2) { return _rv32_gorc     (rs1, rs2); }
 static inline long _rv_shfl     (long rs1, long rs2) { return _rv32_shfl     (rs1, rs2); }
 static inline long _rv_unshfl   (long rs1, long rs2) { return _rv32_unshfl   (rs1, rs2); }
@@ -908,7 +908,7 @@ static inline long _rv_slo      (long rs1, long rs2) { return _rv64_slo      (rs
 static inline long _rv_sro      (long rs1, long rs2) { return _rv64_sro      (rs1, rs2); }
 static inline long _rv_rol      (long rs1, long rs2) { return _rv64_rol      (rs1, rs2); }
 static inline long _rv_ror      (long rs1, long rs2) { return _rv64_ror      (rs1, rs2); }
-static inline long _rv_grev     (long rs1, long rs2) { return _rv64_grev     (rs1, rs2); }
+//static inline long _rv_grev     (long rs1, long rs2) { return _rv64_grev     (rs1, rs2); }
 static inline long _rv_gorc     (long rs1, long rs2) { return _rv64_gorc     (rs1, rs2); }
 static inline long _rv_shfl     (long rs1, long rs2) { return _rv64_shfl     (rs1, rs2); }
 static inline long _rv_unshfl   (long rs1, long rs2) { return _rv64_unshfl   (rs1, rs2); }
@@ -930,7 +930,7 @@ static inline long _rv_fsr(long rs1, long rs3, long rs2) { return _rv64_fsr(rs1,
 
 #ifdef RVINTRIN_RV32
 
-#define RVINTRIN_GREV_PSEUDO_OP32(_arg, _name) \
+/*#define RVINTRIN_GREV_PSEUDO_OP32(_arg, _name) \
 	static inline long    _rv_   ## _name(long    rs1) { return _rv_grev  (rs1, _arg); } \
 	static inline int32_t _rv32_ ## _name(int32_t rs1) { return _rv32_grev(rs1, _arg); }
 
@@ -944,7 +944,7 @@ static inline long _rv_fsr(long rs1, long rs3, long rs2) { return _rv64_fsr(rs1,
 #define RVINTRIN_GREV_PSEUDO_OP64(_arg, _name) \
 	static inline long    _rv_   ## _name(long    rs1) { return _rv_grev  (rs1, _arg); } \
 	static inline int64_t _rv64_ ## _name(int64_t rs1) { return _rv64_grev(rs1, _arg); }
-#endif
+#endif*/
 
 RVINTRIN_GREV_PSEUDO_OP32( 1, rev_p)
 RVINTRIN_GREV_PSEUDO_OP32( 2, rev2_n)

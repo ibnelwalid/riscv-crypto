@@ -7,7 +7,7 @@ endif
 
 include config/$(CONFIG).conf
 
-SPIKE   = $(RISCV)/bin/spike
+SPIKE   = spike
 
 BUILD_DIR = $(REPO_BUILD)/benchmarks/$(CONFIG)
 
@@ -135,7 +135,7 @@ $(call map_dis,${1},${3}) : $(call map_elf,${1},${3})
 
 $(call map_run_py,${1},-${3}) : $(call map_elf,${1},${3})
 	@mkdir -p $(dir $(call map_run_py,${1},${3}))
-	$(SPIKE) --isa=$(CONF_ARCH_SPIKE) $(PK) $(call map_elf,${1},${3}) > $${@}
+	$(SPIKE) --isa=$(TARGET_ARCH) $(PK) $(call map_elf,${1},${3}) > $${@}
 	sed -i "s/^bbl loader/#/" $${@}
 
 TARGETS += $(call map_elf,${1},${3})
